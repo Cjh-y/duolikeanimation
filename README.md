@@ -59,6 +59,10 @@ SIMCTL_CHILD_TILT_DEGREES=-20 xcrun simctl launch booted io.elijahsemyonov.DuoLi
 
 Built with [Claude Code](https://claude.com/claude-code) using Claude Fable 5.1.
 
+### Prompt
+
+> It's a new wizard Xcode iOS project. The idea of this project is to demonstrate how SwiftUI shaders and core motion data can be used to mimic iPhone Duo folding animation. The essence of the effect is the following: whenever the phone tilts around axis colinear with UIKit screenspace Y axis, the following effect happens: the original image of UI stays in the plane that has zero tilt in this axis, and passing through the left or right edge of the phone and is farther from the person holding it. and the shader manipulates the image of the view with two effects: reprojecting it as if the screen is the window through which we look at the original UI sitting at this plane, and blurring it proportional to distance from the physical screen to the plane-aligned UI (for example using importance sampling on rough translucent surface), divergent raycast intersections must darken the resulting color. In physical terms - the device mimics frosted glass window through which we can see the original interface, that ignores the device physical rotation. The reprojected rays that miss the original UI are black. The estimated position of human eyes is around 30cm on the line orthogonal to zero-tilt plane. Your task is to implement this effect.
+
 ## License
 
 MIT, see [LICENSE](LICENSE).
